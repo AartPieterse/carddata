@@ -1,0 +1,81 @@
+[
+    {
+  "id": "inv_001",
+  "category": "Investment",
+  "description": "Invest in a promising AI startup that's developing autonomous vehicle technology. High risk, high reward potential.",
+  "actions": ["accept", "reject"],
+  "cost": 25000,
+  "cycleReturn": 850,
+  "duration": 18,
+  "effects": {
+    "securities": [
+      {"type": "stocks", "change": 2, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "inv_002",
+  "category": "Investment", 
+  "description": "Purchase a duplex in an up-and-coming neighborhood. Requires ongoing maintenance but provides steady rental income.",
+  "actions": ["accept", "reject"],
+  "cost": 180000,
+  "cycleReturn": 2800,
+  "duration": 60,
+  "effects": {
+    "assets": [
+      {"type": "realestate", "valueMultiplier": 1.0, "incomeMultiplier": 1.15}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "inv_003",
+  "category": "Investment",
+  "description": "Set up a small cryptocurrency mining farm. Returns depend on crypto market volatility and energy costs.",
+  "actions": ["accept", "reject"],
+  "cost": 45000,
+  "cycleReturn": 1200,
+  "duration": 24,
+  "effects": {
+    "securities": [
+      {"type": "crypto", "change": 5, "changeType": "percentage"}
+    ],
+    "assets": [
+      {"type": "equipment", "valueMultiplier": 0.95}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "inv_004", 
+  "category": "Investment",
+  "description": "Conservative government bond investment with guaranteed returns. Low risk but inflation may erode real value.",
+  "actions": ["accept", "reject"],
+  "cost": 50000,
+  "cycleReturn": 750,
+  "duration": 36,
+  "effects": {
+    "securities": [
+      {"type": "ETF", "change": 1, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "inv_005",
+  "category": "Investment",
+  "description": "Start a gourmet food truck business. Requires hands-on management but can generate strong cash flow in busy locations.",
+  "actions": ["accept", "reject"],
+  "conditions": [{"type": "car_owned", "value": true}],
+  "cost": 85000,
+  "cycleReturn": 3200,
+  "duration": 30,
+  "effects": {
+    "assets": [
+      {"type": "equipment", "valueMultiplier": 0.90, "incomeMultiplier": 1.25}
+    ]
+  },
+  "cashEffect": 0
+}
+]

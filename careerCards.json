@@ -1,0 +1,71 @@
+[
+  {
+    "id": "car_001",
+    "category": "Career",
+    "description": "Your company offers you a promotion to Senior Manager with increased responsibilities and a team of 8 people to manage.",
+    "actions": ["accept", "reject"],
+    "salaryChange": 1200,
+    "oneTimeBonus": 5000,
+    "effects": {
+      "personal": {"type": "job_level"}
+    },
+    "cashEffect": 0
+  },
+  {
+    "id": "car_002",
+    "category": "Career",
+    "description": "A competitor company headhunted you with a lucrative offer, but it requires relocating to another city.",
+    "actions": ["accept", "reject"],
+    "conditions": [{"type": "married", "value": false}],
+    "salaryChange": 2500,
+    "oneTimeBonus": 15000,
+    "effects": {
+      "securities": [
+        {"type": "realestate", "change": -5, "changeType": "percentage"}
+      ]
+    },
+    "cashEffect": -8000
+  },
+  {
+    "id": "car_003",
+    "category": "Career",
+    "description": "Your department is being restructured. You can take a voluntary demotion with reduced salary or risk being laid off.",
+    "actions": ["accept", "reject"],
+    "salaryChange": -800,
+    "oneTimeBonus": 2000,
+    "effects": {
+      "personal": {"type": "job_security"}
+    },
+    "cashEffect": 0
+  },
+  {
+    "id": "car_004",
+    "category": "Career",
+    "description": "An opportunity to start your own consulting business using your expertise. High potential but uncertain income initially.",
+    "actions": ["accept", "reject"],
+    "salaryChange": -2000,
+    "oneTimeBonus": 0,
+    "effects": {
+      "assets": [
+        {"type": "equipment", "valueMultiplier": 1.0, "incomeMultiplier": 1.5}
+      ],
+      "personal": {"type": "entrepreneur"}
+    },
+    "cashEffect": -12000
+  },
+  {
+    "id": "car_005",
+    "category": "Career",
+    "description": "Your company is offering early retirement with a generous pension package. You'd lose current income but gain financial security.",
+    "actions": ["accept", "reject"],
+    "salaryChange": -3500,
+    "oneTimeBonus": 75000,
+    "effects": {
+      "securities": [
+        {"type": "ETF", "change": 3, "changeType": "percentage"}
+      ],
+      "personal": {"type": "retired"}
+    },
+    "cashEffect": 0
+  }
+]

@@ -1,0 +1,70 @@
+[
+    {
+  "id": "news_003",
+  "category": "News", 
+  "description": "Housing bubble bursts as mortgage defaults surge, causing widespread real estate value drops.",
+  "actions": ["accept"],
+  "conditions": [{"type": "house_owned", "value": true}],
+  "effects": {
+    "securities": [
+      {"type": "realestate", "change": -25, "changeType": "percentage"}
+    ],
+    "assets": [
+      {"type": "house", "valueMultiplier": 0.75, "incomeMultiplier": 0.8},
+      {"type": "realestate", "valueMultiplier": 0.70}
+    ]
+  },
+  "cashEffect": 0
+},{
+  "id": "news_004",
+  "category": "News",
+  "description": "New healthcare regulations cause medical costs to skyrocket, particularly affecting families with children.",
+  "actions": ["accept"],
+  "effects": {
+    "securities": [
+      {"type": "stocks", "change": -8, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": -500
+},
+{
+  "id": "news_001",
+  "category": "News",
+  "description": "The Federal Reserve announces a 0.75% interest rate increase to combat inflation, affecting all financial markets.",
+  "actions": ["accept"],
+  "effects": {
+    "securities": [
+      {"type": "banking", "change": 8, "changeType": "percentage"},
+      {"type": "stocks", "change": -12, "changeType": "percentage"},
+      {"type": "realestate", "change": -15, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "news_002", 
+  "category": "News",
+  "description": "Major technology company announces revolutionary AI breakthrough, sending tech stocks soaring while traditional sectors decline.",
+  "actions": ["accept"],
+  "effects": {
+    "securities": [
+      {"type": "stocks", "change": 22, "changeType": "percentage"},
+      {"type": "ETF", "change": 8, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": 0
+},
+{
+  "id": "news_005",
+  "category": "News",
+  "description": "Major cryptocurrency exchange collapse triggers massive selloff across all digital assets.",
+  "actions": ["accept"],
+  "effects": {
+    "securities": [
+      {"type": "crypto", "change": -45, "changeType": "percentage"},
+      {"type": "stocks", "change": -5, "changeType": "percentage"}
+    ]
+  },
+  "cashEffect": 0
+}
+]

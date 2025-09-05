@@ -1,0 +1,74 @@
+[
+  {
+    "id": "per_001",
+    "category": "Personal",
+    "description": "You're getting married! Your partner will contribute to household income but living expenses will also increase.",
+    "actions": ["accept", "reject"],
+    "conditions": [{"type": "married", "value": false}],
+    "effects": {
+      "personal": {"type": "married", "value": true},
+      "assets": [
+        {"type": "house", "valueMultiplier": 1.0, "incomeMultiplier": 0.85}
+      ]
+    },
+    "cashEffect": 3500,
+    "oneTimeBonus": 0
+  },
+  {
+    "id": "per_002",
+    "category": "Personal",
+    "description": "You're expecting your first child! This brings joy but also significant ongoing expenses for childcare, healthcare, and education.",
+    "actions": ["accept"],
+    "conditions": [{"type": "children", "value": false}],
+    "effects": {
+      "personal": {"type": "children", "value": true},
+      "securities": [
+        {"type": "ETF", "change": 2, "changeType": "percentage"}
+      ]
+    },
+    "cashEffect": -1800
+  },
+  {
+    "id": "per_003",
+    "category": "Personal",
+    "description": "You found an envelope with $2,500 cash on the street. You can keep it, donate it to charity, or turn it in to police.",
+    "actions": ["accept", "reject"],
+    "effects": {
+      "personal": {"type": "ethics"}
+    },
+    "cashEffect": 2500
+  },
+  {
+    "id": "per_004",
+    "category": "Personal",
+    "description": "Your house was burglarized. Insurance covers most items but you need to pay the deductible and replace some valuables.",
+    "actions": ["accept"],
+    "conditions": [{"type": "house_owned", "value": true}],
+    "effects": {
+      "assets": [
+        {"type": "house", "valueMultiplier": 0.98}
+      ],
+      "personal": {"type": "security"}
+    },
+    "cashEffect": -4200
+  },
+  {
+    "id": "per_005",
+    "category": "Personal",
+    "description": "You're going through a difficult divorce. Legal fees are mounting and assets will need to be split.",
+    "actions": ["accept", "reject"],
+    "conditions": [{"type": "married", "value": true}],
+    "effects": {
+      "personal": {"type": "married", "value": false},
+      "assets": [
+        {"type": "house", "valueMultiplier": 0.5},
+        {"type": "realestate", "valueMultiplier": 0.5}
+      ],
+      "securities": [
+        {"type": "stocks", "change": -50, "changeType": "percentage"},
+        {"type": "ETF", "change": -50, "changeType": "percentage"}
+      ]
+    },
+    "cashEffect": -15000
+  }
+]
