@@ -86,7 +86,7 @@
       ],
       "conditions": [
         {
-          "type": "married",
+          "type": "is_married",
           "value": true
         }
       ],
@@ -112,4 +112,5 @@
       "cashEffect": 15000
     }
   ]
+
 
