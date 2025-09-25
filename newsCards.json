@@ -1,70 +1,183 @@
 [
     {
-  "id": "news_003",
-  "category": "News", 
-  "description": "Housing bubble bursts as mortgage defaults surge, causing widespread real estate value drops.",
-  "actions": ["accept"],
-  "conditions": [{"type": "house_owned", "value": true}],
-  "effects": {
-    "securities": [
-      {"type": "realestate", "change": -25, "changeType": "percentage"}
-    ],
-    "assets": [
-      {"type": "house", "valueMultiplier": 0.75, "incomeMultiplier": 0.8},
-      {"type": "realestate", "valueMultiplier": 0.70}
-    ]
-  },
-  "cashEffect": 0
-},{
-  "id": "news_004",
-  "category": "News",
-  "description": "New healthcare regulations cause medical costs to skyrocket, particularly affecting families with children.",
-  "actions": ["accept"],
-  "effects": {
-    "securities": [
-      {"type": "stocks", "change": -8, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": -500
-},
-{
-  "id": "news_001",
-  "category": "News",
-  "description": "The Federal Reserve announces a 0.75% interest rate increase to combat inflation, affecting all financial markets.",
-  "actions": ["accept"],
-  "effects": {
-    "securities": [
-      {"type": "banking", "change": 8, "changeType": "percentage"},
-      {"type": "stocks", "change": -12, "changeType": "percentage"},
-      {"type": "realestate", "change": -15, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "news_002", 
-  "category": "News",
-  "description": "Major technology company announces revolutionary AI breakthrough, sending tech stocks soaring while traditional sectors decline.",
-  "actions": ["accept"],
-  "effects": {
-    "securities": [
-      {"type": "stocks", "change": 22, "changeType": "percentage"},
-      {"type": "ETF", "change": 8, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "news_005",
-  "category": "News",
-  "description": "Major cryptocurrency exchange collapse triggers massive selloff across all digital assets.",
-  "actions": ["accept"],
-  "effects": {
-    "securities": [
-      {"type": "crypto", "change": -45, "changeType": "percentage"},
-      {"type": "stocks", "change": -5, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": 0
-}
-]
+      "id": "news_003",
+      "category": "News", 
+      "description": "Housing bubble bursts as mortgage defaults surge, causing widespread real estate value drops.",
+      "actions": ["accept"],
+      "conditions": [
+        {
+          "type": "has_house",
+          "value": true
+        }
+      ],
+      "effects": {
+        "assets": [
+          {
+            "type": "realestate_value",
+            "change": 0.75,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "realestate_income",
+            "change": 0.8,
+            "changeType": "multiplier"
+          }
+        ],
+        "securities": [
+          {
+            "type": "stock_value",
+            "ticker": "AAPL",
+            "change": 0.90,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "MSFT",
+            "change": 0.85,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "news_004",
+      "category": "News",
+      "description": "New healthcare regulations cause medical costs to skyrocket, particularly affecting families with children.",
+      "actions": ["accept"],
+      "conditions": [],
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "stock_value",
+            "ticker": "JNJ",
+            "change": 1.15,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_income",
+            "ticker": "JNJ",
+            "change": 1.20,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "*",
+            "change": 0.92,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": -500
+    },
+    {
+      "id": "news_001",
+      "category": "News",
+      "description": "The Federal Reserve announces a 0.75% interest rate increase to combat inflation, affecting all financial markets.",
+      "actions": ["accept"],
+      "conditions": [],
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "stock_value",
+            "ticker": "*",
+            "change": 0.88,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "crypto_value",
+            "ticker": "*",
+            "change": 0.85,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": [
+          {
+            "type": "interestrate",
+            "change": 0.75,
+            "changeType": "absolute"
+          }
+        ]
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "news_002", 
+      "category": "News",
+      "description": "Major technology company announces revolutionary AI breakthrough, sending tech stocks soaring while traditional sectors decline.",
+      "actions": ["accept"],
+      "conditions": [],
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "stock_value",
+            "ticker": "AAPL",
+            "change": 1.25,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "MSFT",
+            "change": 1.30,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "NVDA",
+            "change": 1.40,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "JNJ",
+            "change": 0.95,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "news_005",
+      "category": "News",
+      "description": "Major cryptocurrency exchange collapse triggers massive selloff across all digital assets.",
+      "actions": ["accept"],
+      "conditions": [],
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "crypto_value",
+            "ticker": "*",
+            "change": 0.55,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "crypto_income",
+            "ticker": "*",
+            "change": 0.60,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "*",
+            "change": 0.95,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    }
+  ]
