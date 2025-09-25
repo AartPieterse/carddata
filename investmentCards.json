@@ -1,81 +1,196 @@
 [
     {
-  "id": "inv_001",
-  "category": "Investment",
-  "description": "Invest in a promising AI startup that's developing autonomous vehicle technology. High risk, high reward potential.",
-  "actions": ["accept", "reject"],
-  "cost": 25000,
-  "cycleReturn": 850,
-  "duration": 18,
-  "effects": {
-    "securities": [
-      {"type": "stocks", "change": 2, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "inv_002",
-  "category": "Investment", 
-  "description": "Purchase a duplex in an up-and-coming neighborhood. Requires ongoing maintenance but provides steady rental income.",
-  "actions": ["accept", "reject"],
-  "cost": 180000,
-  "cycleReturn": 2800,
-  "duration": 60,
-  "effects": {
-    "assets": [
-      {"type": "realestate", "valueMultiplier": 1.0, "incomeMultiplier": 1.15}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "inv_003",
-  "category": "Investment",
-  "description": "Set up a small cryptocurrency mining farm. Returns depend on crypto market volatility and energy costs.",
-  "actions": ["accept", "reject"],
-  "cost": 45000,
-  "cycleReturn": 1200,
-  "duration": 24,
-  "effects": {
-    "securities": [
-      {"type": "crypto", "change": 5, "changeType": "percentage"}
-    ],
-    "assets": [
-      {"type": "equipment", "valueMultiplier": 0.95}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "inv_004", 
-  "category": "Investment",
-  "description": "Conservative government bond investment with guaranteed returns. Low risk but inflation may erode real value.",
-  "actions": ["accept", "reject"],
-  "cost": 50000,
-  "cycleReturn": 750,
-  "duration": 36,
-  "effects": {
-    "securities": [
-      {"type": "ETF", "change": 1, "changeType": "percentage"}
-    ]
-  },
-  "cashEffect": 0
-},
-{
-  "id": "inv_005",
-  "category": "Investment",
-  "description": "Start a gourmet food truck business. Requires hands-on management but can generate strong cash flow in busy locations.",
-  "actions": ["accept", "reject"],
-  "conditions": [{"type": "car_owned", "value": true}],
-  "cost": 85000,
-  "cycleReturn": 3200,
-  "duration": 30,
-  "effects": {
-    "assets": [
-      {"type": "equipment", "valueMultiplier": 0.90, "incomeMultiplier": 1.25}
-    ]
-  },
-  "cashEffect": 0
-}
-]
+      "id": "inv_001",
+      "category": "Investment",
+      "description": "Invest in a promising AI startup that's developing autonomous vehicle technology. High risk, high reward potential.",
+      "actions": ["accept", "reject"],
+      "conditions": [],
+      "investment": {
+        "id": "ai_startup_investment",
+        "title": "AI Autonomous Vehicle Startup",
+        "description": "Early-stage investment in autonomous vehicle AI technology with high growth potential",
+        "income": 850.0,
+        "downpayment": 15000.0,
+        "credit": 125000.0
+      },
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "stock_value",
+            "ticker": "TSLA",
+            "change": 1.08,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_value",
+            "ticker": "NVDA",
+            "change": 1.05,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "inv_002",
+      "category": "Investment", 
+      "description": "Purchase a duplex in an up-and-coming neighborhood. Requires ongoing maintenance but provides steady rental income.",
+      "actions": ["accept", "reject"],
+      "conditions": [],
+      "investment": {
+        "id": "rental_duplex_investment",
+        "title": "Rental Property Duplex",
+        "description": "Multi-family rental property in developing neighborhood with steady income potential",
+        "income": 2800.0,
+        "downpayment": 40000.0,
+        "credit": 450000.0
+      },
+      "effects": {
+        "assets": [
+          {
+            "type": "realestate_value",
+            "change": 1.0,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "realestate_income",
+            "change": 1.15,
+            "changeType": "multiplier"
+          }
+        ],
+        "securities": [],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "inv_003",
+      "category": "Investment",
+      "description": "Set up a small cryptocurrency mining farm. Returns depend on crypto market volatility and energy costs.",
+      "actions": ["accept", "reject"],
+      "conditions": [],
+      "investment": {
+        "id": "crypto_mining_farm",
+        "title": "Cryptocurrency Mining Operation",
+        "description": "Small-scale mining farm with specialized hardware for Bitcoin and Ethereum mining",
+        "income": 1200.0,
+        "downpayment": 5000.0,
+        "credit": 85000.0
+      },
+      "effects": {
+        "assets": [
+          {
+            "type": "physical_value",
+            "change": 0.95,
+            "changeType": "multiplier"
+          }
+        ],
+        "securities": [
+          {
+            "type": "crypto_value",
+            "ticker": "BTC",
+            "change": 1.08,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "crypto_value",
+            "ticker": "ETH",
+            "change": 1.06,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "crypto_income",
+            "ticker": "*",
+            "change": 1.10,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "inv_004", 
+      "category": "Investment",
+      "description": "Conservative government bond investment with guaranteed returns. Low risk but inflation may erode real value.",
+      "actions": ["accept", "reject"],
+      "conditions": [],
+      "investment": {
+        "id": "government_bonds",
+        "title": "Conservative Government Bonds",
+        "description": "Low-risk treasury bonds with guaranteed returns and inflation protection",
+        "income": 750.0,
+        "downpayment": 50000.0,
+        "credit": 50000.0
+      },
+      "effects": {
+        "assets": [],
+        "securities": [
+          {
+            "type": "stock_income",
+            "ticker": "JNJ",
+            "change": 1.05,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "stock_income",
+            "ticker": "MSFT",
+            "change": 1.03,
+            "changeType": "multiplier"
+          }
+        ],
+        "personal": [],
+        "banking": [
+          {
+            "type": "interestrate",
+            "change": 0.1,
+            "changeType": "absolute"
+          }
+        ]
+      },
+      "cashEffect": 0
+    },
+    {
+      "id": "inv_005",
+      "category": "Investment",
+      "description": "Start a gourmet food truck business. Requires hands-on management but can generate strong cash flow in busy locations.",
+      "actions": ["accept", "reject"],
+      "conditions": [
+        {
+          "type": "has_car",
+          "value": true
+        }
+      ],
+      "investment": {
+        "id": "food_truck_business",
+        "title": "Gourmet Food Truck Business",
+        "description": "Mobile food service business specializing in gourmet cuisine with high foot traffic potential",
+        "income": 3200.0,
+        "downpayment": 15000.0,
+        "credit": 150000.0
+      },
+      "effects": {
+        "assets": [
+          {
+            "type": "physical_value",
+            "change": 0.90,
+            "changeType": "multiplier"
+          },
+          {
+            "type": "physical_income",
+            "change": 1.25,
+            "changeType": "multiplier"
+          }
+        ],
+        "securities": [],
+        "personal": [],
+        "banking": []
+      },
+      "cashEffect": 0
+    }
+  ]
