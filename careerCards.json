@@ -76,41 +76,7 @@
       },
       "cashEffect": 1000 
     },
-         {
-      "id": "027",
-      "category": "Personal",
-      "description": "You receive an unexpected inheritance from a distant relative you barely knew. The will includes cash, some old collectibles, and a small rental property.",
-      "actions": [
-        "accept",
-        "reject"
-      ],
-      "conditions": [
-        {
-          "type": "is_married",
-          "value": true
-        }
-      ],
-      "effects": {
-        "assets": [
-          {
-            "type": "realestate_value",
-            "change": 45000,
-            "changeType": "absolute"
-          },
-          {
-            "type": "realestate_income",
-            "change": 280,
-            "changeType": "absolute"
-          },
-          {
-            "type": "physical_value",
-            "change": 8500,
-            "changeType": "absolute"
-          }
-        ]
-      },
-      "cashEffect": 15000
-    }
   ]
+
 
 
